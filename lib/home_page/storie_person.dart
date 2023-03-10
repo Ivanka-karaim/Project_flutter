@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/storie_title.dart';
+import 'package:lab3/home_page/storie_title.dart';
 
 class CustomStoriePersonWidget extends StatelessWidget {
   const CustomStoriePersonWidget({super.key});

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/post.dart';
-import 'package:lab3/stories.dart';
+import 'package:lab3/home_page/post.dart';
+import 'package:lab3/home_page/stories.dart';
 
 class CustomPostsWidget extends StatelessWidget {
   const CustomPostsWidget({super.key});

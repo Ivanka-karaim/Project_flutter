@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+
+
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
 
@@ -9,6 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      foregroundColor: Colors.black,
       title: Row(
         children: [
           TextButton(
@@ -17,7 +20,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: const <Widget>[
                 Text(
-                  'Instagram',
+                  'ivanka_karayim',
                   style: TextStyle(color: Colors.black, fontSize: 20),
                 ),
                 Icon(Icons.expand_more, size: 20.0, color: Colors.black),
@@ -25,9 +28,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             onPressed: () {},
           ),
-          Expanded(
-            child: Container(color: Colors.white),
-          ),
+
         ],
       ),
       backgroundColor: Colors.white,
@@ -38,14 +39,19 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.favorite_outline),
+          icon: const Icon(Icons.more_horiz_outlined),
           color: Colors.black,
           onPressed: () {},
         ),
         IconButton(
-          icon: const Icon(Icons.message),
+          icon: const Icon(Icons.subdirectory_arrow_right),
           color: Colors.black,
-          onPressed: () {},
+          onPressed: () { },
+        ),
+        IconButton(
+          icon: const Icon(Icons.edit_note_outlined),
+          color: Colors.black,
+          onPressed: () { },
         ),
       ],
     );

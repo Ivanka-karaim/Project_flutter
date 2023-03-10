@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/bottom_bar.dart';
-import 'package:lab3/posts.dart';
+import 'package:lab3/home_page/bottom_bar.dart';
+import 'package:lab3/home_page/posts.dart';
 
 
-import 'app_bar.dart';
+import 'home_page/app_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

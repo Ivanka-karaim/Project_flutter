@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/post_header.dart';
+import 'post_header.dart';
 
 class CustomPostWidget extends StatelessWidget {
   const CustomPostWidget({super.key});
