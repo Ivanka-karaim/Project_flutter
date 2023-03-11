@@ -13,8 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       foregroundColor: Colors.black,
 
-      title: Row(
-        children: [
+      title:
           TextButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
             child: Row(
@@ -31,8 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             onPressed: () {},
           ),
 
-        ],
-      ),
+
       backgroundColor: Colors.white,
       elevation: 0,
       shape: const RoundedRectangleBorder(
