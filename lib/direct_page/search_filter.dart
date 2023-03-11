@@ -7,7 +7,7 @@ class CustomSearchFilterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width:20),
+        const SizedBox(width:20),
         Expanded(
           flex: 4,
           child: ElevatedButton(
@@ -15,15 +15,26 @@ class CustomSearchFilterWidget extends StatelessWidget {
               backgroundColor: Colors.grey[200],
               elevation: 0,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10), // встановлюємо однакове значення радіусу для всіх кутів
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
             onPressed: () {},
             child: Row(
               children: const [
-                Icon(Icons.search, color: Colors.grey,),
-                SizedBox(width:10),
-                Text("Search", style: TextStyle(color: Colors.grey),),
+                Icon(
+                  Icons.search,
+                  color: Colors.grey,
+                ),
+                SizedBox(
+                    width:10,
+                ),
+                Text("Search",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontFamily: 'Roboto',
+                      fontSize: 17,
+                  ),
+                ),
               ],
             ),
           ),
@@ -36,7 +47,14 @@ class CustomSearchFilterWidget extends StatelessWidget {
               minimumSize: const Size(0, 0),
             ),
             onPressed: () {},
-            child: Text("Filter"),
+            child: const Text(
+                "Filter",
+                style:TextStyle(
+                    fontFamily: 'Roboto',
+                    fontWeight: FontWeight.w600,
+                    fontSize: 15,
+                ),
+            ),
           ),
         ),
       ],

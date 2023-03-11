@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/home_page/post.dart';
+import 'package:lab3/home_page/post/post.dart';
 import 'package:lab3/home_page/stories.dart';
 
 class CustomPostsWidget extends StatelessWidget {

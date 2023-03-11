@@ -17,16 +17,16 @@ class CustomContextDirect extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         if (index == 0) {
           return const SizedBox(
-            height: 50,
+            height: 60,
             child: CustomSearchFilterWidget(),
           );
         }else if (index==1){
           return const SizedBox(
-            height: 50,
+            height: 60,
             child: CustomTypeMessagesWidget(),
           );
         }
-        return CustomMessageWidget();
+        return const CustomMessageWidget();
       },
       itemCount: 20,
     );

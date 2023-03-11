@@ -1,4 +1,5 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/material.dart';
 
 class CustomStorieTitle extends StatelessWidget{
   const CustomStorieTitle({super.key});
@@ -8,15 +9,17 @@ class CustomStorieTitle extends StatelessWidget{
     return const SizedBox(
       width: 75,
       child: Text(
-        "Your story",
+        "story",
         textAlign: TextAlign.center,
         maxLines: 2,
         // максимальна кількість рядків тексту
         overflow: TextOverflow.ellipsis,
         // обрізання тексту, якщо він не вміщується
         style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.bold,
+          fontSize: 13,
+          fontWeight: FontWeight.w400,
+          color: Colors.black,
+          fontFamily: 'Roboto',
         ),
       ),
     );

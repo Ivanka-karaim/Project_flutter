@@ -11,8 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Row(
-        children: [
+      title:
           TextButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
             child: Row(
@@ -20,23 +19,26 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               children: const <Widget>[
                 Text(
                   'Instagram',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 22,
+                      fontFamily: 'Roboto',),
                 ),
-                Icon(Icons.expand_more, size: 20.0, color: Colors.black),
+                Icon(
+                    Icons.expand_more,
+                    size: 22.0,
+                    color: Colors.black,
+                ),
               ],
             ),
             onPressed: () {},
           ),
-          Expanded(
-            child: Container(color: Colors.white),
-          ),
-        ],
-      ),
+
       backgroundColor: Colors.white,
       elevation: 0,
       shape: const RoundedRectangleBorder(
         side: BorderSide(
-            color: Colors.grey, width: 0.50), // колір та товщина межі
+            color: Colors.grey, width: 0.5), // колір та товщина межі
       ),
       actions: [
         IconButton(
@@ -45,7 +47,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {},
         ),
         IconButton(
-          icon: const Icon(Icons.message),
+          icon: const Icon(Icons.chat_bubble_outline_outlined),
           color: Colors.black,
           onPressed: () {
             Navigator.push(

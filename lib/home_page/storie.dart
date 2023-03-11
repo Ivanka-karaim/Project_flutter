@@ -10,7 +10,6 @@ class CustomStorieWidget extends StatelessWidget {
       child: Column(
         children: [
           CustomAvatarWidget(75),
-
           const SizedBox(height: 8), // відступ між зображенням та підписом
           const CustomStorieTitle(),
         ],

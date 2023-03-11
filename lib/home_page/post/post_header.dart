@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'avatar.dart';
+import '../avatar.dart';
 
 class CustomHeaderPostWidget extends StatelessWidget {
   const CustomHeaderPostWidget({super.key});
@@ -14,6 +14,9 @@ class CustomHeaderPostWidget extends StatelessWidget {
         CustomAvatarWidget(40),
         const SizedBox(width: 10),
         Column(
+
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
               height: 20,
@@ -26,7 +29,10 @@ class CustomHeaderPostWidget extends StatelessWidget {
                 child: const Text(
                   'bloomberry_ua',
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.w600),
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16,
+                      fontFamily: 'Roboto'),
                 ),
               ),
             ),
@@ -41,7 +47,9 @@ class CustomHeaderPostWidget extends StatelessWidget {
                 child: const Text(
                   'ТЦ "Rich Town"',
                   style: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.w400),
+                      color: Colors.black,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: 'Roboto'),
                 ),
               ),
             ),

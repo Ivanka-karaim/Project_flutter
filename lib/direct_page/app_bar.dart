@@ -12,6 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       foregroundColor: Colors.black,
+
       title: Row(
         children: [
           TextButton(
@@ -21,7 +22,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               children: const <Widget>[
                 Text(
                   'ivanka_karayim',
-                  style: TextStyle(color: Colors.black, fontSize: 20),
+                  style: TextStyle(color: Colors.black, fontSize: 20,
+                    fontFamily: 'Roboto', fontWeight: FontWeight.w600),
                 ),
                 Icon(Icons.expand_more, size: 20.0, color: Colors.black),
               ],

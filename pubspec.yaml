@@ -90,3 +90,10 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/images/
+  fonts:
+      - family: Roboto
+        fonts:
+          - asset: assets/fonts/Roboto-Regular.ttf
+          - asset: assets/fonts/Roboto-Bold.ttf
+          - asset: assets/fonts/Roboto-Light.ttf
+          - asset: assets/fonts/Roboto-Medium.ttf
