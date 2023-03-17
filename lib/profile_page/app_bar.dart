@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../direct_page/general.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget {
+  const CustomAppBarProfile({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: const <Widget>[
             Text(
-              'Instagram',
+              'ivanka_karayim',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 22,
@@ -42,23 +42,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       shape: const RoundedRectangleBorder(
         side:
-            BorderSide(color: Colors.grey, width: 0.5), // колір та товщина межі
+        BorderSide(color: Colors.grey, width: 0.5), // колір та товщина межі
       ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.favorite_outline),
+          icon: const Icon(Icons.add_box_outlined),
           color: Colors.black,
           onPressed: () {},
         ),
         IconButton(
-          icon: const Icon(Icons.chat_bubble_outline_outlined),
+          icon: const Icon(Icons.more_vert_outlined),
           color: Colors.black,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => DirectPage()),
-            );
-          },
+          onPressed: () { },
         ),
       ],
     );

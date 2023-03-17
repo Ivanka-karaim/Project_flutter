@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../main.dart';
+
 class CustomBottomNavigateBar extends StatelessWidget {
   const CustomBottomNavigateBar({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -10,6 +14,14 @@ class CustomBottomNavigateBar extends StatelessWidget {
       showSelectedLabels: false,
       showUnselectedLabels: false,
       backgroundColor: Colors.white,
+      currentIndex: MyAppState.cIndex,
+      onTap: (int index) {
+        setState(){
+          MyAppState.cIndex = index;
+          MyAppState.tabController.animateTo(index);
+        }
+      },
+
       items: [
         const BottomNavigationBarItem(
           icon: Icon(Icons.home_filled, color: Colors.black),
