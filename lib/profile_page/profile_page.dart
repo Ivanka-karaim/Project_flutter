@@ -11,7 +11,6 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const CustomAppBarProfile(),
-      // drawer: const CustomDrawerWidget(),
       body: Container(
         color: Colors.white,
         child: Column(
@@ -25,7 +24,7 @@ class ProfilePage extends StatelessWidget {
             MaterialPageRoute(builder: (context) => DirectPage()),
           );
         },
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.grey[100],
         child: const Icon(
           Icons.message_outlined,
           color: Colors.black,

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lab3/search_page/search_page.dart';
+
+import 'direct_page/general.dart';
 
 class CustomDrawerWidget extends StatelessWidget{
   const CustomDrawerWidget({super.key});
@@ -43,7 +46,21 @@ class CustomDrawerWidget extends StatelessWidget{
           ),
         ),
         ListTile(
-          title: const Text('Search'),
+          title: const Text('Direct'),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => DirectPage()),
+            );
+
+            // Update the state of the app
+            // ...
+            // Then close the drawer
+            // Navigator.pop(context);
+          },
+        ),
+        ListTile(
+          title: const Text('Favourites'),
           onTap: () {
             // Update the state of the app
             // ...
@@ -52,7 +69,7 @@ class CustomDrawerWidget extends StatelessWidget{
           },
         ),
         ListTile(
-          title: const Text('Add post'),
+          title: const Text('Add stories'),
           onTap: () {
             // Update the state of the app
             // ...
@@ -60,24 +77,7 @@ class CustomDrawerWidget extends StatelessWidget{
             Navigator.pop(context);
           },
         ),
-        ListTile(
-          title: const Text('Reels'),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
-        ),
-        ListTile(
-          title: const Text('Profile'),
-          onTap: () {
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            Navigator.pop(context);
-          },
-        ),
+
       ],
     ),
     );

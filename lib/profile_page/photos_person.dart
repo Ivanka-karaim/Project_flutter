@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/profile_page/watch_photo.dart';
 
 import '../direct_page/general.dart';
 import '../home_page/post/post_desc.dart';
@@ -34,54 +33,52 @@ class CustomPhotosPerson extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
                   builder: (_) =>
                       // CustomWatchPhotoWidget(index),
-                    Scaffold(
-                      appBar: const CustomAppBarProfile(),
-                      body:
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 30),
-                        child: Column(
-                          children: [
-                            const CustomHeaderPostWidget(),
-                            Hero(
-                              tag: 'image${index.toString()}',
-                              child: Image(
-                                image: AssetImage(imageUrls[index]),
-                                width: MediaQuery.of(context).size.width,
-                                fit: BoxFit.cover,
-                              ),),
-                            const CustomPostIconLineWidget(),
-                            const CustomPostLikesWidget(),
-                            const CustomPostDescriptionWidget(),
-                            const CustomPostTimeTransWidget(),
-                          ],
+                      Scaffold(
+                        appBar: const CustomAppBarProfile(),
+                        body: Padding(
+                          padding: const EdgeInsets.only(bottom: 30),
+                          child: Column(
+                            children: [
+                              const CustomHeaderPostWidget(),
+                              Hero(
+                                tag: 'image${index.toString()}',
+                                child: Image(
+                                  image: AssetImage(imageUrls[index]),
+                                  width: MediaQuery.of(context).size.width,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                              const CustomPostIconLineWidget(),
+                              const CustomPostLikesWidget(),
+                              const CustomPostDescriptionWidget(),
+                              const CustomPostTimeTransWidget(),
+                            ],
+                          ),
                         ),
-                      ),
-
-
-                    )
-                ),
-              );
-            },
-            child: Hero(
-              tag: 'image${index.toString()}',
-              child: Padding(
-                padding: const EdgeInsets.all(2),
-                child: Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(imageUrls[index]),
-                      fit: BoxFit.cover,
-                    ),
+                      )),
+            );
+          },
+          child: Hero(
+            tag: 'image${index.toString()}',
+            child: Padding(
+              padding: const EdgeInsets.all(1),
+              child: Container(
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(imageUrls[index]),
+                    fit: BoxFit.cover,
                   ),
                 ),
               ),
-            ));
+            ),
+          ),
+        );
         // return Image.asset('assets/images/my.jpg');
       },
     );
