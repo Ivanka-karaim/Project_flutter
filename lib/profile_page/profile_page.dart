@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:lab3/profile_page/app_bar.dart';
 import 'package:lab3/profile_page/profile_list_view.dart';
 
+import '../direct_page/general.dart';
+
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
@@ -17,10 +19,15 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => DirectPage()),
+          );
+        },
         backgroundColor: Colors.red,
         child: const Icon(
-          Icons.favorite_outline,
+          Icons.message_outlined,
           color: Colors.black,
         ),
       ),

@@ -9,7 +9,9 @@ class CustomProfileListView extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: [CustomInfoPeople(), CustomPhotosPerson()],
+      children: [
+        CustomInfoPeople(),
+        CustomPhotosPerson()],
 
 
 
