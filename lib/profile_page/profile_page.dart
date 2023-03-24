@@ -5,16 +5,20 @@ import 'package:lab3/profile_page/profile_list_view.dart';
 import '../direct_page/general.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final Function func;
+
+
+  ProfilePage( {super.key, required this.func});
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBarProfile(),
+      appBar: CustomAppBarProfile(func:func),
       body: Container(
         color: Colors.white,
         child: Column(
-          children: const [Expanded(child: CustomProfileListView())],
+          children: [Expanded(child: CustomProfileListView(func:func))],
         ),
       ),
       floatingActionButton: FloatingActionButton(

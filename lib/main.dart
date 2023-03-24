@@ -12,19 +12,31 @@ import 'home_page/app_bar.dart';
 
 class MyAppState extends State<MyApp> with TickerProviderStateMixin {
   static int cIndex = 0;
-  final List<Widget> _widgetOptions = <Widget>[
-    const HomePage(),
-    const SearchPage(),
-    const AddPage(),
-    const ReelsPage(),
-    const ProfilePage()
+  static List<String> imageUrls = [
+    'assets/images/my.jpg',
+    'assets/images/my1.jpg',
+
   ];
+
+  void addImage(str, index){
+    setState(() {
+      index? imageUrls.remove(str): imageUrls.add(str);
+    });
+
+  }
+  // final List<Widget> _widgetOptions = <Widget>[
+  //   HomePage(func:addImage),
+  //   const SearchPage(),
+  //   const AddPage(),
+  //   const ReelsPage(),
+  //   ProfilePage(func:addImage)
+  // ];
   static late TabController tabController;
 
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: _widgetOptions.length, vsync: this);
+    tabController = TabController(length: 5, vsync: this);
     tabController.addListener(() {
       setState(() {
         cIndex = tabController.index;
@@ -40,7 +52,13 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
       home: Scaffold(
         body: TabBarView(
           controller: tabController,
-          children: _widgetOptions,
+          children: [
+            HomePage(func:addImage),
+            const SearchPage(),
+            const AddPage(),
+            const ReelsPage(),
+            ProfilePage(func:addImage)
+          ],
         ),
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
@@ -116,7 +134,8 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
 }
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  final Function func;
+  const HomePage({super.key, required this.func});
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +145,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: Column(
-          children: const [Expanded(child: CustomPostsWidget())],
+          children: [Expanded(child: CustomPostsWidget(func:func))],
         ),
       ),
     );

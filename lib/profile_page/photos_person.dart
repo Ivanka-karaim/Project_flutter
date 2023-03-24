@@ -9,7 +9,11 @@ import '../home_page/post/post_time.dart';
 import 'app_bar.dart';
 
 class CustomPhotosPerson extends StatelessWidget {
-  final List<String> imageUrls = [
+  final Function func;
+
+
+  CustomPhotosPerson(this.imageUrls, {super.key, required this.func});
+  List<String> imageUrls = [
     'assets/images/my.jpg',
     'assets/images/my1.jpg',
     'assets/images/my2.jpg',
@@ -40,7 +44,7 @@ class CustomPhotosPerson extends StatelessWidget {
                   builder: (_) =>
                       // CustomWatchPhotoWidget(index),
                       Scaffold(
-                        appBar: const CustomAppBarProfile(),
+                        appBar: CustomAppBarProfile(func:func),
                         body: Padding(
                           padding: const EdgeInsets.only(bottom: 30),
                           child: Column(
@@ -54,7 +58,7 @@ class CustomPhotosPerson extends StatelessWidget {
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              const CustomPostIconLineWidget(),
+                              CustomPostIconLineWidget(image:imageUrls[index],func:func),
                               const CustomPostLikesWidget(),
                               const CustomPostDescriptionWidget(),
                               const CustomPostTimeTransWidget(),

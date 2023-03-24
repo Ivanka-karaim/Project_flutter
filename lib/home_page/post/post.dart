@@ -6,7 +6,20 @@ import 'post_likes.dart';
 import 'post_time.dart';
 
 class CustomPostWidget extends StatelessWidget {
-  const CustomPostWidget({super.key});
+  final Function func;
+  final int index;
+
+  CustomPostWidget({super.key, required this.func, required this.index});
+  List<String> images = [
+    'assets/images/my.jpg',
+    'assets/images/my1.jpg',
+    'assets/images/my2.jpg',
+    'assets/images/my3.jpg',
+    'assets/images/my.jpg',
+    'assets/images/my1.jpg',
+    'assets/images/my2.jpg',
+    'assets/images/my3.jpg',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +29,11 @@ class CustomPostWidget extends StatelessWidget {
         children: [
           const CustomHeaderPostWidget(),
           Image(
-            image: const AssetImage('assets/images/my.jpg'),
+            image: AssetImage(images[index]),
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
           ),
-          const CustomPostIconLineWidget(),
+          CustomPostIconLineWidget(image:images[index],func:func),
           const CustomPostLikesWidget(),
           const CustomPostDescriptionWidget(),
           const CustomPostTimeTransWidget(),

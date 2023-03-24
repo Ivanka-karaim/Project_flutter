@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../direct_page/general.dart';
+import '../saved/saved_page.dart';
 
 class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBarProfile({super.key});
+  final Function func;
+
+  CustomAppBarProfile({super.key, required this.func});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -53,7 +56,29 @@ class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget
         IconButton(
           icon: const Icon(Icons.more_vert_outlined),
           color: Colors.black,
-          onPressed: () { },
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) {
+                return Column(
+                  children: [
+                    TextButton(onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => SavedPage(func:func)),
+                      );
+                    }, child: Text('Saved'))
+                  ],
+                );
+                // return Container(
+                //   height: 200.0,
+                //   child: Center(
+                //     child: Text('This is a bottom sheet'),
+                //   ),
+                // );
+              },
+            );
+          },
         ),
       ],
     );
