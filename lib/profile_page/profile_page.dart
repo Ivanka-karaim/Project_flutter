@@ -6,15 +6,15 @@ import '../direct_page/general.dart';
 
 class ProfilePage extends StatelessWidget {
   final Function func;
+  final List<String> imgSaved;
 
-
-  ProfilePage( {super.key, required this.func});
+  const ProfilePage( {super.key, required this.func, required this.imgSaved});
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarProfile(func:func),
+      appBar: CustomAppBarProfile(func:func, imgSaved: imgSaved),
       body: Container(
         color: Colors.white,
         child: Column(
@@ -25,7 +25,7 @@ class ProfilePage extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => DirectPage()),
+            MaterialPageRoute(builder: (context) => const DirectPage()),
           );
         },
         backgroundColor: Colors.grey[100],

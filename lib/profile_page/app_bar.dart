@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../direct_page/general.dart';
+
 import '../saved/saved_page.dart';
 
 class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget {
   final Function func;
+  final List<String> imgSaved;
 
-  CustomAppBarProfile({super.key, required this.func});
+  CustomAppBarProfile({super.key, required this.func, required this.imgSaved});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -65,17 +66,11 @@ class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget
                     TextButton(onPressed: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SavedPage(func:func)),
+                        MaterialPageRoute(builder: (context) => SavedPage(func:func, imgSaved:imgSaved)),
                       );
                     }, child: Text('Saved'))
                   ],
                 );
-                // return Container(
-                //   height: 200.0,
-                //   child: Center(
-                //     child: Text('This is a bottom sheet'),
-                //   ),
-                // );
               },
             );
           },

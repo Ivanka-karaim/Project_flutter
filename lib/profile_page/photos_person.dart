@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../direct_page/general.dart';
+
 import '../home_page/post/post_desc.dart';
 import '../home_page/post/post_header.dart';
 import '../home_page/post/post_icon_line.dart';
@@ -12,17 +12,8 @@ class CustomPhotosPerson extends StatelessWidget {
   final Function func;
 
 
-  CustomPhotosPerson(this.imageUrls, {super.key, required this.func});
-  List<String> imageUrls = [
-    'assets/images/my.jpg',
-    'assets/images/my1.jpg',
-    'assets/images/my2.jpg',
-    'assets/images/my3.jpg',
-    'assets/images/my.jpg',
-    'assets/images/my1.jpg',
-    'assets/images/my2.jpg',
-    'assets/images/my3.jpg',
-  ];
+  const CustomPhotosPerson(this.imageUrls, {super.key, required this.func});
+  final List<String> imageUrls;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +35,7 @@ class CustomPhotosPerson extends StatelessWidget {
                   builder: (_) =>
                       // CustomWatchPhotoWidget(index),
                       Scaffold(
-                        appBar: CustomAppBarProfile(func:func),
+                        appBar: CustomAppBarProfile(func:func, imgSaved: imageUrls),
                         body: Padding(
                           padding: const EdgeInsets.only(bottom: 30),
                           child: Column(

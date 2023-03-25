@@ -1,36 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:lab3/add_page/add_page.dart';
 import 'package:lab3/drawer.dart';
-import 'package:lab3/home_page/bottom_bar.dart';
+
 import 'package:lab3/home_page/posts.dart';
 import 'package:lab3/profile_page/profile_page.dart';
 import 'package:lab3/reels_page/reels_page.dart';
 import 'package:lab3/search_page/search_page.dart';
 
-import 'direct_page/general.dart';
+
 import 'home_page/app_bar.dart';
 
 class MyAppState extends State<MyApp> with TickerProviderStateMixin {
   static int cIndex = 0;
-  static List<String> imageUrls = [
+  static List<String> imageUrlsSaved = [
     'assets/images/my.jpg',
     'assets/images/my1.jpg',
-
   ];
 
-  void addImage(str, index){
+  void changeListImage(str, index){
     setState(() {
-      index? imageUrls.remove(str): imageUrls.add(str);
+      index? imageUrlsSaved.remove(str): imageUrlsSaved.add(str);
     });
-
   }
-  // final List<Widget> _widgetOptions = <Widget>[
-  //   HomePage(func:addImage),
-  //   const SearchPage(),
-  //   const AddPage(),
-  //   const ReelsPage(),
-  //   ProfilePage(func:addImage)
-  // ];
+
   static late TabController tabController;
 
   @override
@@ -43,6 +35,11 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
       });
     });
   }
+  @override
+  void dispose(){
+    tabController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +50,11 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
         body: TabBarView(
           controller: tabController,
           children: [
-            HomePage(func:addImage),
+            HomePage(func:changeListImage),
             const SearchPage(),
             const AddPage(),
             const ReelsPage(),
-            ProfilePage(func:addImage)
+            ProfilePage(func:changeListImage, imgSaved:imageUrlsSaved)
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

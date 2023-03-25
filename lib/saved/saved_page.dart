@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:lab3/direct_page/app_bar.dart';
-import 'package:lab3/main.dart';
-
 import '../profile_page/photos_person.dart';
-// import 'package:lab3/profile_page/photos_person.dart';
+
 
 
 
 class SavedPage extends StatelessWidget {
   final Function func;
+  final List<String> imgSaved;
 
-  SavedPage({super.key, required this.func});
+  const SavedPage({super.key, required this.func, required this.imgSaved});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,7 @@ class SavedPage extends StatelessWidget {
       appBar: const CustomAppBar(),
       body:  Container(
         color: Colors.white,
-        child: CustomPhotosPerson(MyAppState.imageUrls, func: func),
+        child: CustomPhotosPerson(imgSaved, func: func),
 
       ),
     );
