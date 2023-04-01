@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
 
 
-import '../home_page/post/post_desc.dart';
-import '../home_page/post/post_header.dart';
-import '../home_page/post/post_icon_line.dart';
-import '../home_page/post/post_likes.dart';
-import '../home_page/post/post_time.dart';
+import '../home/post/post_desc.dart';
+import '../home/post/post_header.dart';
+import '../home/post/post_icon_line.dart';
+import '../home/post/post_likes.dart';
+import '../home/post/post_time.dart';
 import 'app_bar.dart';
 
 class CustomPhotosPerson extends StatelessWidget {
-  final Function func;
-
-
-  const CustomPhotosPerson(this.imageUrls, {super.key, required this.func});
+  const CustomPhotosPerson(this.imageUrls, {super.key});
   final List<String> imageUrls;
 
   @override
@@ -35,7 +32,7 @@ class CustomPhotosPerson extends StatelessWidget {
                   builder: (_) =>
                       // CustomWatchPhotoWidget(index),
                       Scaffold(
-                        appBar: CustomAppBarProfile(func:func, imgSaved: imageUrls),
+                        appBar: const CustomAppBarProfile(),
                         body: Padding(
                           padding: const EdgeInsets.only(bottom: 30),
                           child: Column(
@@ -49,7 +46,7 @@ class CustomPhotosPerson extends StatelessWidget {
                                   fit: BoxFit.cover,
                                 ),
                               ),
-                              CustomPostIconLineWidget(image:imageUrls[index],func:func),
+                              CustomPostIconLineWidget(image:imageUrls[index]),
                               const CustomPostLikesWidget(),
                               const CustomPostDescriptionWidget(),
                               const CustomPostTimeTransWidget(),

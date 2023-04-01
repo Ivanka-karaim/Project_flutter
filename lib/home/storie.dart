@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/home_page/avatar.dart';
-import 'package:lab3/home_page/storie_title.dart';
+import 'package:lab3/home/avatar.dart';
+import 'package:lab3/home/storie_title.dart';
 
 class CustomStorieWidget extends StatelessWidget {
   @override

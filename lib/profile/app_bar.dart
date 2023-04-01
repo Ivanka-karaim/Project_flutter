@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 
-
 import '../saved/saved_page.dart';
 
-class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget {
-  final Function func;
-  final List<String> imgSaved;
-
-  CustomAppBarProfile({super.key, required this.func, required this.imgSaved});
+class CustomAppBarProfile extends StatelessWidget
+    implements PreferredSizeWidget {
+  const CustomAppBarProfile({super.key});
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -18,7 +15,6 @@ class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget
       iconTheme: const IconThemeData(
         color: Colors.black,
       ),
-
       title: TextButton(
         style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
         child: Row(
@@ -41,12 +37,11 @@ class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget
         ),
         onPressed: () {},
       ),
-
       backgroundColor: Colors.white,
       elevation: 0,
       shape: const RoundedRectangleBorder(
         side:
-        BorderSide(color: Colors.grey, width: 0.5), // колір та товщина межі
+            BorderSide(color: Colors.grey, width: 0.5), // колір та товщина межі
       ),
       actions: [
         IconButton(
@@ -63,12 +58,15 @@ class CustomAppBarProfile extends StatelessWidget implements PreferredSizeWidget
               builder: (BuildContext context) {
                 return Column(
                   children: [
-                    TextButton(onPressed: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SavedPage(func:func, imgSaved:imgSaved)),
-                      );
-                    }, child: Text('Saved'))
+                    TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const SavedPage()),
+                          );
+                        },
+                        child: const Text('Saved'))
                   ],
                 );
               },

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../home_page/avatar.dart';
+import '../home/avatar.dart';
 
 class CustomMessageWidget extends StatelessWidget {
   const CustomMessageWidget({super.key});

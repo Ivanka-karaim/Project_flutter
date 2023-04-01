@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/home_page/post/post.dart';
-import 'package:lab3/home_page/stories.dart';
+import 'package:lab3/home/post/post.dart';
+import 'package:lab3/home/stories.dart';
 
 class CustomPostsWidget extends StatelessWidget {
-  final Function func;
-  const CustomPostsWidget({super.key, required this.func});
+
+  const CustomPostsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CustomPostsWidget extends StatelessWidget {
             child: CustomStoriesWidget(),
           );
         }
-        return CustomPostWidget(index:index-1,func:func);
+        return CustomPostWidget(index:index-1);
       },
       itemCount: 9,
     );

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/search_page/search_page.dart';
-
-import 'direct_page/general.dart';
+import 'direct/general.dart';
 
 class CustomDrawerWidget extends StatelessWidget{
   const CustomDrawerWidget({super.key});
@@ -20,7 +18,7 @@ class CustomDrawerWidget extends StatelessWidget{
             color: Colors.white,
           ),
           margin: EdgeInsets.zero,
-          padding: EdgeInsets.symmetric(horizontal: 12.0),
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +48,7 @@ class CustomDrawerWidget extends StatelessWidget{
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => DirectPage()),
+              MaterialPageRoute(builder: (context) => const DirectPage()),
             );
 
             // Update the state of the app

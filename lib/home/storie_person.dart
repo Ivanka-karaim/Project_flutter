@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/home_page/storie_title.dart';
+import 'package:lab3/home/storie_title.dart';
 
 class CustomStoriePersonWidget extends StatelessWidget {
   const CustomStoriePersonWidget({super.key});
@@ -12,7 +12,7 @@ class CustomStoriePersonWidget extends StatelessWidget {
         style: ElevatedButton.styleFrom(
             backgroundColor: Colors.white,
             padding: EdgeInsets.zero,
-            minimumSize: Size(0, 0),
+            minimumSize: const Size(0, 0),
             side: BorderSide.none,
             elevation: 0),
         onPressed: () {},

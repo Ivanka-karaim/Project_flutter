@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/direct_page/message.dart';
-import 'package:lab3/direct_page/type_message.dart';
+import 'package:lab3/direct/message.dart';
+import 'package:lab3/direct/type_message.dart';
 
 
 import 'search_filter.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../direct_page/general.dart';
+import '../direct/general.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
@@ -56,7 +56,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => DirectPage()),
+              MaterialPageRoute(builder: (context) => const DirectPage()),
             );
           },
         ),

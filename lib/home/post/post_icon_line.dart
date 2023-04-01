@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/main.dart';
+import 'package:provider/provider.dart';
+import '../../model.dart';
 
 class CustomPostIconLineWidget extends StatefulWidget {
-  final Function func;
   final String image;
 
-  const CustomPostIconLineWidget(
-      {super.key, required this.func, required this.image});
+  const CustomPostIconLineWidget({super.key, required this.image});
 
   @override
   State<CustomPostIconLineWidget> createState() =>
@@ -20,8 +19,9 @@ class _CustomPostIconLineWidgetState extends State<CustomPostIconLineWidget> {
   @override
   void initState() {
     super.initState();
-
-    saved = MyAppState.imageUrlsSaved.contains(widget.image);
+    saved = Provider.of<AppModel>(context, listen: false)
+        .imageUrlsSaved
+        .contains(widget.image);
   }
 
   @override
@@ -49,8 +49,12 @@ class _CustomPostIconLineWidgetState extends State<CustomPostIconLineWidget> {
         Expanded(child: Container()),
         IconButton(
           onPressed: () {
-            widget.func(widget.image, saved);
-            setState(() {
+            // widget.func(widget.image, saved);
+            Provider.of<AppModel>(context, listen: false)
+                .changeListImage(widget.image, saved);
+
+            setState(
+              () {
                 saved = saved ? false : true;
               },
             );

@@ -6,10 +6,9 @@ import 'post_likes.dart';
 import 'post_time.dart';
 
 class CustomPostWidget extends StatelessWidget {
-  final Function func;
   final int index;
 
-  CustomPostWidget({super.key, required this.func, required this.index});
+  CustomPostWidget({super.key, required this.index});
   List<String> images = [
     'assets/images/my.jpg',
     'assets/images/my1.jpg',
@@ -33,7 +32,7 @@ class CustomPostWidget extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
           ),
-          CustomPostIconLineWidget(image:images[index],func:func),
+          CustomPostIconLineWidget(image:images[index]),
           const CustomPostLikesWidget(),
           const CustomPostDescriptionWidget(),
           const CustomPostTimeTransWidget(),

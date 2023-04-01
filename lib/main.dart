@@ -1,27 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/add_page/add_page.dart';
+import 'package:lab3/add/add_page.dart';
 import 'package:lab3/drawer.dart';
 
-import 'package:lab3/home_page/posts.dart';
-import 'package:lab3/profile_page/profile_page.dart';
-import 'package:lab3/reels_page/reels_page.dart';
-import 'package:lab3/search_page/search_page.dart';
+import 'package:lab3/home/posts.dart';
+import 'package:lab3/model.dart';
+import 'package:lab3/profile/profile_page.dart';
+import 'package:lab3/reels/reels_page.dart';
+import 'package:lab3/search/search_page.dart';
+import 'package:provider/provider.dart';
 
-
-import 'home_page/app_bar.dart';
+import 'home/app_bar.dart';
 
 class MyAppState extends State<MyApp> with TickerProviderStateMixin {
   static int cIndex = 0;
-  static List<String> imageUrlsSaved = [
-    'assets/images/my.jpg',
-    'assets/images/my1.jpg',
-  ];
-
-  void changeListImage(str, index){
-    setState(() {
-      index? imageUrlsSaved.remove(str): imageUrlsSaved.add(str);
-    });
-  }
 
   static late TabController tabController;
 
@@ -35,8 +26,9 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
       });
     });
   }
+
   @override
-  void dispose(){
+  void dispose() {
     tabController.dispose();
     super.dispose();
   }
@@ -49,12 +41,12 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
       home: Scaffold(
         body: TabBarView(
           controller: tabController,
-          children: [
-            HomePage(func:changeListImage),
-            const SearchPage(),
-            const AddPage(),
-            const ReelsPage(),
-            ProfilePage(func:changeListImage, imgSaved:imageUrlsSaved)
+          children: const [
+            HomePage(),
+            SearchPage(),
+            AddPage(),
+            ReelsPage(),
+            ProfilePage()
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -131,8 +123,7 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
 }
 
 class HomePage extends StatelessWidget {
-  final Function func;
-  const HomePage({super.key, required this.func});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +133,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         color: Colors.white,
         child: Column(
-          children: [Expanded(child: CustomPostsWidget(func:func))],
+          children: const [Expanded(child: CustomPostsWidget())],
         ),
       ),
     );
@@ -157,5 +148,10 @@ class MyApp extends StatefulWidget {
 }
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      child: const MyApp(),
+      create: (context) => AppModel(),
+    ),
+  );
 }

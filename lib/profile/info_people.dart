@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/home_page/avatar.dart';
+import 'package:lab3/home/avatar.dart';
 
 class CustomInfoPeople extends StatelessWidget {
   const CustomInfoPeople({super.key});
