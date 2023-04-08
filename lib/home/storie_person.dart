@@ -10,7 +10,7 @@ class CustomStoriePersonWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.white,
+            // backgroundColor: Colors.white,
             padding: EdgeInsets.zero,
             minimumSize: const Size(0, 0),
             side: BorderSide.none,
@@ -26,7 +26,7 @@ class CustomStoriePersonWidget extends StatelessWidget {
                   height: 75,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.white,
+                      // color: Colors.white,
                       width: 2,
                     ),
 
@@ -41,7 +41,7 @@ class CustomStoriePersonWidget extends StatelessWidget {
                 ),
                 const Icon(
                   Icons.circle,
-                  color: Colors.white,
+                  // color: Colors.white,
                   size: 25,
                 ),
                 const Icon(

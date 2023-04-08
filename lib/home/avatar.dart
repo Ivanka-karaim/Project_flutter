@@ -10,7 +10,7 @@ class CustomAvatarWidget extends StatelessWidget {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.white,
+          // backgroundColor: Colors.white,
           padding: EdgeInsets.zero,
           minimumSize: Size(0, 0),
           side: BorderSide.none,
@@ -28,7 +28,7 @@ class CustomAvatarWidget extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(
-              color: Colors.white,
+              // color: Colors.white,
               width: 2,
             ),
 

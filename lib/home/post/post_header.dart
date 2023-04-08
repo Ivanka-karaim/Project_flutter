@@ -29,7 +29,7 @@ class CustomHeaderPostWidget extends StatelessWidget {
                 child: const Text(
                   'bloomberry_ua',
                   style: TextStyle(
-                      color: Colors.black,
+                      // color: Colors.black,
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
                       fontFamily: 'Roboto'),
@@ -47,7 +47,7 @@ class CustomHeaderPostWidget extends StatelessWidget {
                 child: const Text(
                   'ТЦ "Rich Town"',
                   style: TextStyle(
-                      color: Colors.black,
+                      // color: Colors.black,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Roboto'),
                 ),

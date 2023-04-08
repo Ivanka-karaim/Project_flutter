@@ -18,7 +18,7 @@ class CustomStorieTitle extends StatelessWidget{
         style: TextStyle(
           fontSize: 13,
           fontWeight: FontWeight.w400,
-          color: Colors.black,
+          // color: Colors.black,
           fontFamily: 'Roboto',
         ),
       ),

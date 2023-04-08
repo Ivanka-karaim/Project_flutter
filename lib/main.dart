@@ -4,10 +4,12 @@ import 'package:lab3/drawer.dart';
 
 import 'package:lab3/home/posts.dart';
 import 'package:lab3/model.dart';
+import 'package:lab3/theme.dart';
 import 'package:lab3/profile/profile_page.dart';
 import 'package:lab3/reels/reels_page.dart';
 import 'package:lab3/search/search_page.dart';
 import 'package:provider/provider.dart';
+
 
 import 'home/app_bar.dart';
 
@@ -35,9 +37,11 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return Consumer<ThemeModel>(builder: (context, app, child)=>
+        MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'My App',
+      theme: app.selectedTheme,
       home: Scaffold(
         body: TabBarView(
           controller: tabController,
@@ -53,9 +57,9 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
           type: BottomNavigationBarType.fixed,
           showSelectedLabels: false,
           showUnselectedLabels: false,
-          backgroundColor: Colors.white,
-          selectedItemColor: Colors.black,
-          unselectedItemColor: Colors.black,
+          // backgroundColor: Colors.white,
+          // selectedItemColor: Colors.black,
+          // unselectedItemColor: Colors.black,
           currentIndex: cIndex,
           onTap: (int index) {
             cIndex = index;
@@ -103,10 +107,12 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
                   decoration: BoxDecoration(
                     border: cIndex == 4
                         ? Border.all(
-                            color: Colors.black,
+                            // color: Colors.black,
                             width: 1,
                           )
-                        : Border.all(width: 0, color: Colors.white),
+                        : Border.all(width: 0,
+                        // color: Colors.white,
+                    ),
                     shape: BoxShape.circle, // форма круга
                     image: const DecorationImage(
                       fit: BoxFit.cover,
@@ -118,7 +124,7 @@ class MyAppState extends State<MyApp> with TickerProviderStateMixin {
           ],
         ),
       ),
-    );
+    ),);
   }
 }
 
@@ -131,7 +137,7 @@ class HomePage extends StatelessWidget {
       appBar: const CustomAppBar(),
       drawer: const CustomDrawerWidget(),
       body: Container(
-        color: Colors.white,
+        // color: Colors.white,
         child: Column(
           children: const [Expanded(child: CustomPostsWidget())],
         ),
@@ -149,9 +155,16 @@ class MyApp extends StatefulWidget {
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<AppModel>(
+          create: (context) => AppModel(),
+        ),
+        ChangeNotifierProvider<ThemeModel>(
+          create: (context) => ThemeModel( ),
+        )
+      ],
       child: const MyApp(),
-      create: (context) => AppModel(),
     ),
   );
 }

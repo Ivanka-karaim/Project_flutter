@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../saved/saved_page.dart';
+import '../theme.dart';
 
 class CustomAppBarProfile extends StatelessWidget
     implements PreferredSizeWidget {
@@ -44,6 +46,14 @@ class CustomAppBarProfile extends StatelessWidget
             BorderSide(color: Colors.grey, width: 0.5), // колір та товщина межі
       ),
       actions: [
+        IconButton(
+          icon: const Icon(Icons.brightness_6),
+          color: Colors.black,
+          onPressed: () {
+            ThemeModel model = Provider.of<ThemeModel>(context, listen:false);
+            model.swapTheme();
+          },
+        ),
         IconButton(
           icon: const Icon(Icons.add_box_outlined),
           color: Colors.black,
