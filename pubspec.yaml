@@ -37,6 +37,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.5
   shared_preferences: ^2.1.0
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
@@ -92,6 +93,7 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
   assets:
     - assets/images/
+    - assets/json/
   fonts:
       - family: Roboto
         fonts:
@@ -99,3 +101,4 @@ flutter:
           - asset: assets/fonts/Roboto-Bold.ttf
           - asset: assets/fonts/Roboto-Light.ttf
           - asset: assets/fonts/Roboto-Medium.ttf
+

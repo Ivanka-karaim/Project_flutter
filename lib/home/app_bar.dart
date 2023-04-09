@@ -42,7 +42,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         onPressed: () {},
       ),
 
-      // backgroundColor: Colors.white,
+      // backgroundColor: Colors.black,
       elevation: 0,
       shape: const RoundedRectangleBorder(
         side:
@@ -53,7 +53,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           icon: const Icon(Icons.brightness_6),
-          color: Colors.black,
+          // color: Colors.black,
           onPressed: () {
             ThemeModel model = Provider.of<ThemeModel>(context, listen:false);
             model.swapTheme();

@@ -139,7 +139,7 @@ class HomePage extends StatelessWidget {
       body: Container(
         // color: Colors.white,
         child: Column(
-          children: const [Expanded(child: CustomPostsWidget())],
+          children: [Expanded(child: CustomPostsWidget())],
         ),
       ),
     );

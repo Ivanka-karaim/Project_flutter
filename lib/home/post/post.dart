@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../post_model.dart';
 import 'post_desc.dart';
 import 'post_header.dart';
 import 'post_icon_line.dart';
@@ -6,19 +7,9 @@ import 'post_likes.dart';
 import 'post_time.dart';
 
 class CustomPostWidget extends StatelessWidget {
-  final int index;
+  final Post post;
+  const CustomPostWidget( {super.key, required this.post});
 
-  CustomPostWidget({super.key, required this.index});
-  List<String> images = [
-    'assets/images/my.jpg',
-    'assets/images/my1.jpg',
-    'assets/images/my2.jpg',
-    'assets/images/my3.jpg',
-    'assets/images/my.jpg',
-    'assets/images/my1.jpg',
-    'assets/images/my2.jpg',
-    'assets/images/my3.jpg',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,15 +17,15 @@ class CustomPostWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 30),
       child: Column(
         children: [
-          const CustomHeaderPostWidget(),
+          CustomHeaderPostWidget(post:post),
           Image(
-            image: AssetImage(images[index]),
+            image: AssetImage(post.photo),
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
           ),
-          CustomPostIconLineWidget(image:images[index]),
+          CustomPostIconLineWidget(image:post.photo),
           const CustomPostLikesWidget(),
-          const CustomPostDescriptionWidget(),
+          CustomPostDescriptionWidget(post:post),
           const CustomPostTimeTransWidget(),
         ],
       ),

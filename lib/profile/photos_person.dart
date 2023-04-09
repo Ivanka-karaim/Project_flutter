@@ -6,6 +6,7 @@ import '../home/post/post_header.dart';
 import '../home/post/post_icon_line.dart';
 import '../home/post/post_likes.dart';
 import '../home/post/post_time.dart';
+import '../post_model.dart';
 import 'app_bar.dart';
 
 class CustomPhotosPerson extends StatelessWidget {
@@ -37,7 +38,7 @@ class CustomPhotosPerson extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 30),
                           child: Column(
                             children: [
-                              const CustomHeaderPostWidget(),
+                              CustomHeaderPostWidget(post: Post(user_name: 'ivanka_karaim', place: '', photo: imageUrls[index], description: '')),
                               Hero(
                                 tag: 'image${index.toString()}',
                                 child: Image(
@@ -48,7 +49,7 @@ class CustomPhotosPerson extends StatelessWidget {
                               ),
                               CustomPostIconLineWidget(image:imageUrls[index]),
                               const CustomPostLikesWidget(),
-                              const CustomPostDescriptionWidget(),
+                              CustomPostDescriptionWidget(post: Post(user_name: 'ivanka_karaim', place: '', photo: imageUrls[index], description: '')),
                               const CustomPostTimeTransWidget(),
                             ],
                           ),

@@ -28,7 +28,7 @@ class CustomAvatarWidget extends StatelessWidget {
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(
-              // color: Colors.white,
+              color: Colors.white,
               width: 2,
             ),
 

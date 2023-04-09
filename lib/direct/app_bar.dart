@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({super.key});
 
@@ -11,25 +9,30 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      foregroundColor: Colors.black,
-
-      title:
-          TextButton(
-            style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: const <Widget>[
-                Text(
-                  'ivanka_karayim',
-                  style: TextStyle(color: Colors.black, fontSize: 20,
-                    fontFamily: 'Roboto', fontWeight: FontWeight.w600),
-                ),
-                Icon(Icons.expand_more, size: 20.0, color: Colors.black),
-              ],
+      // foregroundColor: Colors.black,
+      title: TextButton(
+        style: ElevatedButton.styleFrom(
+            // backgroundColor: Colors.white,
             ),
-            onPressed: () {},
-          ),
-
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: const <Widget>[
+            Text(
+              'ivanka_karayim',
+              style: TextStyle(
+                  // color: Colors.black,
+                  fontSize: 20,
+                  fontFamily: 'Roboto',
+                  fontWeight: FontWeight.w600),
+            ),
+            Icon(
+              Icons.expand_more, size: 20.0,
+              // color: Colors.black,
+            ),
+          ],
+        ),
+        onPressed: () {},
+      ),
 
       backgroundColor: Colors.white,
       elevation: 0,
@@ -40,18 +43,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           icon: const Icon(Icons.more_horiz_outlined),
-          color: Colors.black,
+          // color: Colors.black,
           onPressed: () {},
         ),
         IconButton(
           icon: const Icon(Icons.subdirectory_arrow_right),
-          color: Colors.black,
-          onPressed: () { },
+          // color: Colors.black,
+          onPressed: () {},
         ),
         IconButton(
           icon: const Icon(Icons.edit_note_outlined),
-          color: Colors.black,
-          onPressed: () { },
+          // color: Colors.black,
+          onPressed: () {},
         ),
       ],
     );

@@ -26,14 +26,14 @@ class CustomInfoPeople extends StatelessWidget {
                       '98',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        // color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
                     Text(
                       'Posts',
                       style: TextStyle(
-                          color: Colors.black,
+                          // color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.w300),
                     )
@@ -49,14 +49,14 @@ class CustomInfoPeople extends StatelessWidget {
                       '1,131',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        // color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
                     Text(
                       'Followers',
                       style: TextStyle(
-                          color: Colors.black,
+                          // color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.w300),
                     )
@@ -72,14 +72,14 @@ class CustomInfoPeople extends StatelessWidget {
                       '801',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.black,
+                        // color: Colors.black,
                         fontSize: 20,
                       ),
                     ),
                     Text(
                       'Following',
                       style: TextStyle(
-                          color: Colors.black,
+                          // color: Colors.black,
                           fontSize: 16,
                           fontWeight: FontWeight.w300),
                     )
@@ -98,7 +98,7 @@ class CustomInfoPeople extends StatelessWidget {
                 'ivanka_karayim',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
-                  color: Colors.black,
+                  // color: Colors.black,
                   fontSize: 15,
                 ),
               ),
@@ -114,7 +114,7 @@ class CustomInfoPeople extends StatelessWidget {
                 '19 y.o.\nBrody&Kyiv',
                 style: TextStyle(
                   fontWeight: FontWeight.w400,
-                  color: Colors.black,
+                  // color: Colors.black,
                   fontSize: 14,
                 ),
               ),
@@ -146,7 +146,7 @@ class CustomInfoPeople extends StatelessWidget {
                                 Text(
                                   "Professional dashboard",
                                   style: TextStyle(
-                                    color: Colors.black,
+                                    // color: Colors.black,
                                     fontFamily: 'Roboto',
                                     fontSize: 16,
                                   ),
@@ -154,7 +154,7 @@ class CustomInfoPeople extends StatelessWidget {
                                 Text(
                                   "362 accounts reached in the last 30 dAys",
                                   style: TextStyle(
-                                    color: Colors.black,
+                                    // color: Colors.black,
                                     fontFamily: 'Roboto',
                                     fontWeight: FontWeight.w300,
                                     fontSize: 14,
@@ -187,7 +187,7 @@ class CustomInfoPeople extends StatelessWidget {
                       child: const Text(
                         "Edit profile",
                         style: TextStyle(
-                          color: Colors.black,
+                          // color: Colors.black,
                           fontFamily: 'Roboto',
                           fontSize: 16,
                         ),
@@ -210,7 +210,7 @@ class CustomInfoPeople extends StatelessWidget {
                       child: const Text(
                         "Share profile",
                         style: TextStyle(
-                          color: Colors.black,
+                          // color: Colors.black,
                           fontFamily: 'Roboto',
                           fontSize: 16,
                         ),
@@ -233,7 +233,7 @@ class CustomInfoPeople extends StatelessWidget {
                       child: const Text(
                         "Contact",
                         style: TextStyle(
-                          color: Colors.black,
+                          // color: Colors.black,
                           fontFamily: 'Roboto',
                           fontSize: 16,
                         ),

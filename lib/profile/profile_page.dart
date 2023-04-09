@@ -24,10 +24,10 @@ class ProfilePage extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const DirectPage()),
           );
         },
-        backgroundColor: Colors.grey[100],
+        // backgroundColor: Colors.grey[100],
         child: const Icon(
           Icons.message_outlined,
-          color: Colors.black,
+          // color: Colors.black,
         ),
       ),
     );

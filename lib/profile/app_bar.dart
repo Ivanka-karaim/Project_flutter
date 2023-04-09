@@ -18,14 +18,16 @@ class CustomAppBarProfile extends StatelessWidget
         color: Colors.black,
       ),
       title: TextButton(
-        style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+        style: ElevatedButton.styleFrom(
+            // backgroundColor: Colors.white,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: const <Widget>[
             Text(
               'ivanka_karayim',
               style: TextStyle(
-                color: Colors.black,
+                // color: Colors.black,
                 fontSize: 22,
                 fontFamily: 'Roboto',
               ),
@@ -33,13 +35,13 @@ class CustomAppBarProfile extends StatelessWidget
             Icon(
               Icons.expand_more,
               size: 22.0,
-              color: Colors.black,
+              // color: Colors.black,
             ),
           ],
         ),
         onPressed: () {},
       ),
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       elevation: 0,
       shape: const RoundedRectangleBorder(
         side:
@@ -48,7 +50,7 @@ class CustomAppBarProfile extends StatelessWidget
       actions: [
         IconButton(
           icon: const Icon(Icons.brightness_6),
-          color: Colors.black,
+          // color: Colors.black,
           onPressed: () {
             ThemeModel model = Provider.of<ThemeModel>(context, listen:false);
             model.swapTheme();
@@ -56,12 +58,12 @@ class CustomAppBarProfile extends StatelessWidget
         ),
         IconButton(
           icon: const Icon(Icons.add_box_outlined),
-          color: Colors.black,
+          // color: Colors.black,
           onPressed: () {},
         ),
         IconButton(
           icon: const Icon(Icons.more_vert_outlined),
-          color: Colors.black,
+          // color: Colors.black,
           onPressed: () {
             showModalBottomSheet(
               context: context,

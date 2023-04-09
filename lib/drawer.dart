@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'direct/general.dart';
 
+
+
 class CustomDrawerWidget extends StatelessWidget{
   const CustomDrawerWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       child: ListView(
       // Important: Remove any padding from the ListView.
       padding: EdgeInsets.zero,
@@ -15,7 +16,7 @@ class CustomDrawerWidget extends StatelessWidget{
         DrawerHeader(
           decoration: BoxDecoration(
             border: Border.all(color:Colors.grey, width:0.5),
-            color: Colors.white,
+            // color: Colors.white,
           ),
           margin: EdgeInsets.zero,
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -26,7 +27,7 @@ class CustomDrawerWidget extends StatelessWidget{
               Text(
                 'Instagram',
                 style: TextStyle(
-                  color: Colors.black,
+                  // color: Colors.black,
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
                 ),
@@ -35,7 +36,7 @@ class CustomDrawerWidget extends StatelessWidget{
               Text(
                 'ivanka_karayim',
                 style: TextStyle(
-                  color: Colors.black,
+                  // color: Colors.black,
                   fontSize: 16.0,
                   fontWeight: FontWeight.normal,
                 ),

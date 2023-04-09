@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../../post_model.dart';
 import '../avatar.dart';
 
 class CustomHeaderPostWidget extends StatelessWidget {
-  const CustomHeaderPostWidget({super.key});
+  Post post=Post(user_name: 'ivanka', place: '', photo: 'assets/images/my.jpg', description: '');
+  CustomHeaderPostWidget({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +28,9 @@ class CustomHeaderPostWidget extends StatelessWidget {
                   minimumSize: const Size(0, 0),
                 ),
                 onPressed: () {},
-                child: const Text(
-                  'bloomberry_ua',
-                  style: TextStyle(
+                child:  Text(
+                  post.user_name,
+                  style: const TextStyle(
                       // color: Colors.black,
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
@@ -44,9 +46,9 @@ class CustomHeaderPostWidget extends StatelessWidget {
                   minimumSize: const Size(0, 0),
                 ),
                 onPressed: () {},
-                child: const Text(
-                  'ТЦ "Rich Town"',
-                  style: TextStyle(
+                child: Text(
+                  post.place,
+                  style: const TextStyle(
                       // color: Colors.black,
                       fontWeight: FontWeight.w400,
                       fontFamily: 'Roboto'),

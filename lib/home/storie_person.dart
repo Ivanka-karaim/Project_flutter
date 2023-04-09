@@ -26,7 +26,7 @@ class CustomStoriePersonWidget extends StatelessWidget {
                   height: 75,
                   decoration: BoxDecoration(
                     border: Border.all(
-                      // color: Colors.white,
+                      color: Colors.white,
                       width: 2,
                     ),
 
