@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../post_model.dart';
+
 class CustomPostDescriptionWidget extends StatelessWidget{
-  const CustomPostDescriptionWidget({super.key});
+  final Post post;
+  const CustomPostDescriptionWidget({super.key, required this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +22,8 @@ class CustomPostDescriptionWidget extends StatelessWidget{
               minimumSize: const Size(0, 0),
             ),
             onPressed: () {},
-            child: const Text("bloomberry_ua",
-              style: TextStyle(color: Colors.black,
+            child: Text(post.user_name,
+              style: const TextStyle(color: Colors.black,
                   fontWeight: FontWeight.w500,fontSize: 15,
                   fontFamily: 'Roboto'),),
           ),
@@ -30,9 +33,9 @@ class CustomPostDescriptionWidget extends StatelessWidget{
         ),
         Container(
           padding: EdgeInsets.zero,
-          child: const Text(
-            'Подаруй собі щастя!',
-            style: TextStyle(fontSize: 15,
+          child: Text(
+            post.description,
+            style: const TextStyle(fontSize: 15,
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.w400 ),
             textAlign: TextAlign.center,
