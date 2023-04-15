@@ -8,7 +8,9 @@ class ThemeModel extends ChangeNotifier {
   ThemeData light = ThemeData.light().copyWith(
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.white,
+      foregroundColor: Colors.black,
     ),
+
     elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all<Color>(Colors.white),

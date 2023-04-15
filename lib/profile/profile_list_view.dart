@@ -9,7 +9,7 @@ class CustomProfileListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [
+      children:  [
         CustomInfoPeople(),
         CustomPhotosPerson([
           'assets/images/my.jpg',

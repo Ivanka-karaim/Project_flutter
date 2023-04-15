@@ -28,13 +28,13 @@ class CustomAppBarProfile extends StatelessWidget
               'ivanka_karayim',
               style: TextStyle(
                 // color: Colors.black,
-                fontSize: 22,
+                fontSize: 20,
                 fontFamily: 'Roboto',
               ),
             ),
             Icon(
               Icons.expand_more,
-              size: 22.0,
+              size: 20.0,
               // color: Colors.black,
             ),
           ],
@@ -59,7 +59,9 @@ class CustomAppBarProfile extends StatelessWidget
         IconButton(
           icon: const Icon(Icons.add_box_outlined),
           // color: Colors.black,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/add_post');
+          },
         ),
         IconButton(
           icon: const Icon(Icons.more_vert_outlined),

@@ -25,6 +25,8 @@ class CustomContextDirect extends StatelessWidget {
             height: 60,
             child: CustomTypeMessagesWidget(),
           );
+        }else if (index==2){
+          return Text(ModalRoute.of(context)!.settings.arguments as String);
         }
         return const CustomMessageWidget();
       },

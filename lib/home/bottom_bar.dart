@@ -18,7 +18,7 @@ class CustomBottomNavigateBar extends StatelessWidget {
       onTap: (int index) {
         setState(){
           MyAppState.cIndex = index;
-          MyAppState.tabController.animateTo(index);
+          // MyAppState.tabController.animateTo(index);
         }
       },
 

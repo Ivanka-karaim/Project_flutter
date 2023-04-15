@@ -10,8 +10,13 @@ class SearchPage extends StatelessWidget{
       // drawer: const CustomDrawerWidget(),
       body: Container(
         color: Colors.white,
-        child: const Center(
-          child: Text('Search'),
+        child: Center(
+          child: ElevatedButton(
+            child: Text('Search'),
+            onPressed: (){Navigator.pop(context);},
+            // onPressed: () { Navigator.pop(context); },
+
+          )
         ),
       ),
     );

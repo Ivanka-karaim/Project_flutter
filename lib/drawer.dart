@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab3/search/search_page.dart';
 import 'direct/general.dart';
 
 
@@ -45,11 +46,11 @@ class CustomDrawerWidget extends StatelessWidget{
           ),
         ),
         ListTile(
-          title: const Text('Direct'),
+          title: const Text('Search'),
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const DirectPage()),
+              MaterialPageRoute(builder: (context) => const SearchPage()),
             );
 
             // Update the state of the app
@@ -59,7 +60,7 @@ class CustomDrawerWidget extends StatelessWidget{
           },
         ),
         ListTile(
-          title: const Text('Favourites'),
+          title: const Text('Add post'),
           onTap: () {
             // Update the state of the app
             // ...

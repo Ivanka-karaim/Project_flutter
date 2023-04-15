@@ -1,22 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:lab3/profile/watch_photo.dart';
 
-
-import '../home/post/post_desc.dart';
-import '../home/post/post_header.dart';
-import '../home/post/post_icon_line.dart';
-import '../home/post/post_likes.dart';
-import '../home/post/post_time.dart';
-import '../post_model.dart';
-import 'app_bar.dart';
-
-class CustomPhotosPerson extends StatelessWidget {
+class CustomPhotosPerson extends StatefulWidget {
   const CustomPhotosPerson(this.imageUrls, {super.key});
+
   final List<String> imageUrls;
+
+  @override
+  State<CustomPhotosPerson> createState() => _CustomPhotosPersonState();
+}
+
+class _CustomPhotosPersonState extends State<CustomPhotosPerson> {
+  int ident = 0;
+
+  updateInd(int ind) {
+    setState(() {
+      ident = ind;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: imageUrls.length,
+      itemCount: widget.imageUrls.length,
       shrinkWrap: true,
       physics: const ScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -26,36 +32,20 @@ class CustomPhotosPerson extends StatelessWidget {
       ),
       itemBuilder: (context, index) {
         return GestureDetector(
-          onTap: () {
-            Navigator.push(
+          onTap: () async {
+            var ind = await Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (_) =>
-                      // CustomWatchPhotoWidget(index),
-                      Scaffold(
-                        appBar: const CustomAppBarProfile(),
-                        body: Padding(
-                          padding: const EdgeInsets.only(bottom: 30),
-                          child: Column(
-                            children: [
-                              CustomHeaderPostWidget(post: Post(user_name: 'ivanka_karaim', place: '', photo: imageUrls[index], description: '')),
-                              Hero(
-                                tag: 'image${index.toString()}',
-                                child: Image(
-                                  image: AssetImage(imageUrls[index]),
-                                  width: MediaQuery.of(context).size.width,
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                              CustomPostIconLineWidget(image:imageUrls[index]),
-                              const CustomPostLikesWidget(),
-                              CustomPostDescriptionWidget(post: Post(user_name: 'ivanka_karaim', place: '', photo: imageUrls[index], description: '')),
-                              const CustomPostTimeTransWidget(),
-                            ],
-                          ),
-                        ),
-                      )),
+                builder: (_) => CustomWatchPhotoPerson(
+                    index: index, imageUrls: widget.imageUrls),
+
+              ),
             );
+            // var ind = await Navigator.pushNamed(context, '/post',
+            //     arguments: {'index': index, 'list': widget.imageUrls});
+            if (ind != null) {
+              updateInd(ind as int);
+            }
           },
           child: Hero(
             tag: 'image${index.toString()}',
@@ -63,8 +53,15 @@ class CustomPhotosPerson extends StatelessWidget {
               padding: const EdgeInsets.all(1),
               child: Container(
                 decoration: BoxDecoration(
+                  border: index == ident
+                      ? Border.all(
+                          color: Colors.red, // кольор обводки
+                          width: 2.0, // товщина обводки
+                          style: BorderStyle.solid, // стиль лінії обводки
+                        )
+                      : null,
                   image: DecorationImage(
-                    image: AssetImage(imageUrls[index]),
+                    image: AssetImage(widget.imageUrls[index]),
                     fit: BoxFit.cover,
                   ),
                 ),

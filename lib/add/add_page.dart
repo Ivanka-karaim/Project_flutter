@@ -10,8 +10,8 @@ class AddPage extends StatelessWidget{
       // drawer: const CustomDrawerWidget(),
       body: Container(
         color: Colors.white,
-        child: const Center(
-          child: Text('Add post'),
+        child:  Center(
+          child: TextButton( onPressed: () { Navigator.pop(context); }, child: Text('Add post'),),
         ),
       ),
     );

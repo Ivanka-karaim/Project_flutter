@@ -68,10 +68,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: const Icon(Icons.chat_bubble_outline_outlined),
           // color: Colors.black,
           onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const DirectPage()),
-            );
+            Navigator.pushNamed(context, '/direct', arguments: 'Home');
+            // Navigator.push(
+            //   context,
+            //   MaterialPageRoute(builder: (context) => const DirectPage()),
+            // );
           },
         ),
       ],
