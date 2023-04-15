@@ -69,10 +69,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           // color: Colors.black,
           onPressed: () {
             Navigator.pushNamed(context, '/direct', arguments: 'Home');
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => const DirectPage()),
-            // );
+
           },
         ),
       ],

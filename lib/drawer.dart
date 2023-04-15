@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab3/search/search_page.dart';
+import 'add/add_page.dart';
 import 'direct/general.dart';
 
 
@@ -46,21 +47,17 @@ class CustomDrawerWidget extends StatelessWidget{
           ),
         ),
         ListTile(
-          title: const Text('Search'),
+          title: const Text('Add post'),
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SearchPage()),
+              MaterialPageRoute(builder: (context) => const AddPage()),
             );
 
-            // Update the state of the app
-            // ...
-            // Then close the drawer
-            // Navigator.pop(context);
           },
         ),
         ListTile(
-          title: const Text('Add post'),
+          title: const Text('Direct'),
           onTap: () {
             // Update the state of the app
             // ...
