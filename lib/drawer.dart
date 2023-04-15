@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/search/search_page.dart';
 import 'add/add_page.dart';
-import 'direct/general.dart';
+
 
 
 

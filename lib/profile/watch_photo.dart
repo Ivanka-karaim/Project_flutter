@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../home/post/post_desc.dart';
 import '../home/post/post_header.dart';
-import '../home/post/post_icon_line.dart';
-import '../home/post/post_likes.dart';
-import '../home/post/post_time.dart';
 import '../post_model.dart';
 import 'app_bar.dart';
 
@@ -33,7 +28,7 @@ class CustomWatchPhotoPerson extends StatelessWidget{
             ),
              ElevatedButton(
                 onPressed: () {Navigator.pop(context, index);},
-                child:Text("Back", style: TextStyle(color: Colors.black),),
+                child:const Text("Back", style: TextStyle(color: Colors.black),),
               ),
 
           ],

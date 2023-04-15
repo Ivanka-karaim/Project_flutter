@@ -11,7 +11,7 @@ class AddPage extends StatelessWidget{
       body: Container(
         color: Colors.white,
         child:  Center(
-          child: TextButton( onPressed: () { Navigator.pop(context); }, child: Text('Add post'),),
+          child: TextButton( onPressed: () { Navigator.pop(context); }, child: const Text('Add post'),),
         ),
       ),
     );

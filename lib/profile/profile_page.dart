@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/home/add_post.dart';
+
 import 'package:lab3/profile/app_bar.dart';
 import 'package:lab3/profile/profile_list_view.dart';
 import 'package:lab3/profile/watch_photo.dart';

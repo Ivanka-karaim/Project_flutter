@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3/profile/watch_photo.dart';
+
 
 class CustomPhotosPerson extends StatefulWidget {
   const CustomPhotosPerson(this.imageUrls, {super.key});
@@ -33,16 +33,16 @@ class _CustomPhotosPersonState extends State<CustomPhotosPerson> {
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () async {
-            var ind = await Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (_) => CustomWatchPhotoPerson(
-                    index: index, imageUrls: widget.imageUrls),
-
-              ),
-            );
-            // var ind = await Navigator.pushNamed(context, '/post',
-            //     arguments: {'index': index, 'list': widget.imageUrls});
+            // var ind = await Navigator.push(
+            //   context,
+            //   MaterialPageRoute(
+            //     builder: (_) => CustomWatchPhotoPerson(
+            //         index: index, imageUrls: widget.imageUrls),
+            //
+            //   ),
+            // );
+            var ind = await Navigator.pushNamed(context, '/post',
+                arguments: {'index': index, 'list': widget.imageUrls});
             if (ind != null) {
               updateInd(ind as int);
             }

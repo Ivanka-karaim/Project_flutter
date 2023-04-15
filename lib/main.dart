@@ -140,11 +140,8 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppBar(),
       drawer: const CustomDrawerWidget(),
-      body: Container(
-        // color: Colors.white,
-        child: Column(
-          children: [Expanded(child: CustomPostsWidget())],
-        ),
+      body: Column(
+        children: [Expanded(child: CustomPostsWidget())],
       ),
     );
   }
